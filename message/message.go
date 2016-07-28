@@ -3,7 +3,7 @@ package message
 import(
 	"github.com/golang/protobuf/proto"
 	"github.com/jbrodriguez/mlog"
-	"./myproto"
+	"github.com/chenshaobo/live/myproto"
 	"encoding/binary"
 	"bytes"
 )

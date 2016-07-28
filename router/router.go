@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/golang/protobuf/proto"
-	"../message"
+	"github.com/chenshaobo/live/message"
 )
 
 
