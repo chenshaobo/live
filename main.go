@@ -5,9 +5,9 @@ import (
 	"github.com/kataras/iris"
 	"github.com/jbrodriguez/mlog"
 	"github.com/golang/protobuf/proto"
-	"./router"
-	"./myproto"
-	"./message"
+	"github.com/chenshaobo/live/router"
+	"github.com/chenshaobo/live/myproto"
+	"github.com/chenshaobo/live/message"
 )
 
 
