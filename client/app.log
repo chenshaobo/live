@@ -1,0 +1,516 @@
+I: 2016/07/28 14:47:48 message.go:37: message id :0
+I: 2016/07/28 14:47:48 message.go:47: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:47:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 10 3 99 115 98]
+E: 2016/07/28 14:47:48 client.go:40: read tcp 127.0.0.1:50087->127.0.0.1:8080: wsarecv: An existing connection was forcibly closed by the remote host.
+I: 2016/07/28 14:50:05 message.go:37: message id :0
+I: 2016/07/28 14:50:05 message.go:47: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:50:05 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 10 3 99 115 98]
+E: 2016/07/28 14:50:05 client.go:40: read tcp 127.0.0.1:50118->127.0.0.1:8080: wsarecv: An existing connection was forcibly closed by the remote host.
+I: 2016/07/28 14:50:46 message.go:37: message id :0
+I: 2016/07/28 14:50:46 message.go:47: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:50:46 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 10 3 99 115 98]
+E: 2016/07/28 14:50:46 client.go:40: read tcp 127.0.0.1:50137->127.0.0.1:8080: wsarecv: An existing connection was forcibly closed by the remote host.
+I: 2016/07/28 14:51:47 message.go:37: message id :0
+I: 2016/07/28 14:51:47 message.go:47: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:51:47 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 10 3 99 115 98]
+E: 2016/07/28 14:51:47 client.go:40: read tcp 127.0.0.1:50155->127.0.0.1:8080: wsarecv: An existing connection was forcibly closed by the remote host.
+I: 2016/07/28 14:52:51 message.go:37: message id :0
+I: 2016/07/28 14:52:51 message.go:47: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:52:51 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 10 3 99 115 98]
+E: 2016/07/28 14:52:51 client.go:40: read tcp 127.0.0.1:50175->127.0.0.1:8080: wsarecv: An existing connection was forcibly closed by the remote host.
+I: 2016/07/28 14:57:14 message.go:36: message id :1000
+I: 2016/07/28 14:57:14 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:57:14 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 14:57:14 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 14:57:14 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 14:57:14 message.go:23: message len :22
+I: 2016/07/28 14:57:14 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=)
+I: 2016/07/28 14:57:14 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 14:57:14 message.go:36: message id :1000
+I: 2016/07/28 14:57:14 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:57:14 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 14:57:14 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 14:57:14 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 14:57:14 message.go:23: message len :22
+I: 2016/07/28 14:57:14 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 14:57:14 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 14:57:14 message.go:36: message id :1000
+I: 2016/07/28 14:57:14 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:57:14 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 14:57:14 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 14:57:14 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 14:57:14 message.go:23: message len :22
+I: 2016/07/28 14:57:14 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 14:57:14 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 14:57:14 message.go:36: message id :1000
+I: 2016/07/28 14:57:14 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:57:14 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 14:57:14 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 14:57:14 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 14:57:14 message.go:23: message len :22
+I: 2016/07/28 14:57:14 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 14:57:14 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 14:57:14 message.go:36: message id :1000
+I: 2016/07/28 14:57:14 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:57:14 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 14:57:14 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 14:57:14 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 14:57:14 message.go:23: message len :22
+I: 2016/07/28 14:57:14 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 14:57:14 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 14:57:14 message.go:36: message id :1000
+I: 2016/07/28 14:57:14 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:57:14 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 14:57:14 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 14:57:14 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 14:57:14 message.go:23: message len :22
+I: 2016/07/28 14:57:14 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 14:57:14 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 14:57:14 message.go:36: message id :1000
+I: 2016/07/28 14:57:14 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:57:14 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 14:57:14 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 14:57:14 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 14:57:14 message.go:23: message len :22
+I: 2016/07/28 14:57:14 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 14:57:14 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 14:57:14 message.go:36: message id :1000
+I: 2016/07/28 14:57:14 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:57:14 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 14:57:14 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 14:57:14 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 14:57:14 message.go:23: message len :22
+I: 2016/07/28 14:57:14 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 14:57:14 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 14:57:14 message.go:36: message id :1000
+I: 2016/07/28 14:57:14 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:57:14 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 14:57:14 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 14:57:14 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 14:57:14 message.go:23: message len :22
+I: 2016/07/28 14:57:14 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 14:57:14 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 14:57:14 message.go:36: message id :1000
+I: 2016/07/28 14:57:14 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 14:57:14 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 14:57:14 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 14:57:14 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 14:57:14 message.go:23: message len :22
+I: 2016/07/28 14:57:14 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 14:57:14 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:23:06 message.go:36: message id :1000
+I: 2016/07/28 15:23:06 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:23:06 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:23:06 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:23:06 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:23:06 message.go:23: message len :22
+I: 2016/07/28 15:23:06 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=)
+I: 2016/07/28 15:23:06 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:23:06 message.go:36: message id :1000
+I: 2016/07/28 15:23:06 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:23:06 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:23:06 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:23:06 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:23:06 message.go:23: message len :22
+I: 2016/07/28 15:23:06 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:23:06 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:23:06 message.go:36: message id :1000
+I: 2016/07/28 15:23:06 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:23:06 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:23:06 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:23:06 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:23:06 message.go:23: message len :22
+I: 2016/07/28 15:23:06 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:23:06 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:23:06 message.go:36: message id :1000
+I: 2016/07/28 15:23:06 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:23:06 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:23:06 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:23:06 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:23:06 message.go:23: message len :22
+I: 2016/07/28 15:23:06 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:23:06 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:23:06 message.go:36: message id :1000
+I: 2016/07/28 15:23:06 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:23:06 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:23:06 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:23:06 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:23:06 message.go:23: message len :22
+I: 2016/07/28 15:23:06 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:23:06 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:23:06 message.go:36: message id :1000
+I: 2016/07/28 15:23:06 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:23:06 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:23:06 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:23:06 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:23:06 message.go:23: message len :22
+I: 2016/07/28 15:23:06 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:23:06 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:23:06 message.go:36: message id :1000
+I: 2016/07/28 15:23:06 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:23:06 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:23:06 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:23:06 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:23:06 message.go:23: message len :22
+I: 2016/07/28 15:23:06 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:23:06 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:23:06 message.go:36: message id :1000
+I: 2016/07/28 15:23:06 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:23:06 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:23:06 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:23:06 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:23:06 message.go:23: message len :22
+I: 2016/07/28 15:23:06 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:23:06 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:23:06 message.go:36: message id :1000
+I: 2016/07/28 15:23:06 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:23:06 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:23:06 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:23:06 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:23:06 message.go:23: message len :22
+I: 2016/07/28 15:23:06 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:23:06 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:23:06 message.go:36: message id :1000
+I: 2016/07/28 15:23:06 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:23:06 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:23:06 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:23:06 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:23:06 message.go:23: message len :22
+I: 2016/07/28 15:23:06 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:23:06 client.go:31: receive :roomID:"1001" 
+I: 2016/07/28 15:24:21 message.go:36: message id :1000
+I: 2016/07/28 15:24:21 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:24:21 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:24:21 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:24:21 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:24:21 message.go:23: message len :22
+I: 2016/07/28 15:24:21 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=)
+I: 2016/07/28 15:24:21 client.go:31: receive :1001
+I: 2016/07/28 15:24:21 message.go:36: message id :1000
+I: 2016/07/28 15:24:21 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:24:21 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:24:21 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:24:21 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:24:21 message.go:23: message len :22
+I: 2016/07/28 15:24:21 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:24:21 client.go:31: receive :1001
+I: 2016/07/28 15:24:21 message.go:36: message id :1000
+I: 2016/07/28 15:24:21 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:24:21 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:24:21 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:24:21 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:24:21 message.go:23: message len :22
+I: 2016/07/28 15:24:21 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:24:21 client.go:31: receive :1001
+I: 2016/07/28 15:24:21 message.go:36: message id :1000
+I: 2016/07/28 15:24:21 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:24:21 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:24:21 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:24:21 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:24:21 message.go:23: message len :22
+I: 2016/07/28 15:24:21 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:24:21 client.go:31: receive :1001
+I: 2016/07/28 15:24:21 message.go:36: message id :1000
+I: 2016/07/28 15:24:21 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:24:21 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:24:21 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:24:21 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:24:21 message.go:23: message len :22
+I: 2016/07/28 15:24:21 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:24:21 client.go:31: receive :1001
+I: 2016/07/28 15:24:21 message.go:36: message id :1000
+I: 2016/07/28 15:24:21 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:24:21 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:24:21 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:24:21 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:24:21 message.go:23: message len :22
+I: 2016/07/28 15:24:21 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:24:21 client.go:31: receive :1001
+I: 2016/07/28 15:24:21 message.go:36: message id :1000
+I: 2016/07/28 15:24:21 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:24:21 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:24:21 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:24:21 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:24:21 message.go:23: message len :22
+I: 2016/07/28 15:24:21 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:24:21 client.go:31: receive :1001
+I: 2016/07/28 15:24:21 message.go:36: message id :1000
+I: 2016/07/28 15:24:21 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:24:21 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:24:21 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:24:21 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:24:21 message.go:23: message len :22
+I: 2016/07/28 15:24:21 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:24:21 client.go:31: receive :1001
+I: 2016/07/28 15:24:21 message.go:36: message id :1000
+I: 2016/07/28 15:24:21 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:24:21 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:24:21 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:24:21 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:24:21 message.go:23: message len :22
+I: 2016/07/28 15:24:21 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:24:21 client.go:31: receive :1001
+I: 2016/07/28 15:24:21 message.go:36: message id :1000
+I: 2016/07/28 15:24:21 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 15:24:21 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 15:24:21 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 49]
+I: 2016/07/28 15:24:21 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 15:24:21 message.go:23: message len :22
+I: 2016/07/28 15:24:21 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1001" )
+I: 2016/07/28 15:24:21 client.go:31: receive :1001
+I: 2016/07/28 16:02:11 message.go:36: message id :1000
+I: 2016/07/28 16:02:11 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:02:11 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:02:11 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:02:11 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:02:11 message.go:23: message len :22
+I: 2016/07/28 16:02:11 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=)
+I: 2016/07/28 16:02:11 client.go:31: receive :1000
+I: 2016/07/28 16:02:11 message.go:36: message id :1000
+I: 2016/07/28 16:02:11 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:02:11 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:02:11 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:02:11 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:02:11 message.go:23: message len :22
+I: 2016/07/28 16:02:11 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:02:11 client.go:31: receive :1000
+I: 2016/07/28 16:02:11 message.go:36: message id :1000
+I: 2016/07/28 16:02:11 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:02:11 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:02:11 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:02:11 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:02:11 message.go:23: message len :22
+I: 2016/07/28 16:02:11 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:02:11 client.go:31: receive :1000
+I: 2016/07/28 16:02:11 message.go:36: message id :1000
+I: 2016/07/28 16:02:11 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:02:11 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:02:11 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:02:11 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:02:11 message.go:23: message len :22
+I: 2016/07/28 16:02:11 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:02:11 client.go:31: receive :1000
+I: 2016/07/28 16:02:11 message.go:36: message id :1000
+I: 2016/07/28 16:02:11 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:02:11 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:02:11 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:02:11 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:02:11 message.go:23: message len :22
+I: 2016/07/28 16:02:11 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:02:11 client.go:31: receive :1000
+I: 2016/07/28 16:02:11 message.go:36: message id :1000
+I: 2016/07/28 16:02:11 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:02:11 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:02:11 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:02:11 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:02:11 message.go:23: message len :22
+I: 2016/07/28 16:02:11 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:02:11 client.go:31: receive :1000
+I: 2016/07/28 16:02:11 message.go:36: message id :1000
+I: 2016/07/28 16:02:11 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:02:11 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:02:11 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:02:11 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:02:11 message.go:23: message len :22
+I: 2016/07/28 16:02:11 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:02:11 client.go:31: receive :1000
+I: 2016/07/28 16:02:11 message.go:36: message id :1000
+I: 2016/07/28 16:02:11 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:02:11 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:02:11 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:02:11 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:02:11 message.go:23: message len :22
+I: 2016/07/28 16:02:11 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:02:11 client.go:31: receive :1000
+I: 2016/07/28 16:02:11 message.go:36: message id :1000
+I: 2016/07/28 16:02:11 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:02:11 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:02:11 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:02:11 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:02:11 message.go:23: message len :22
+I: 2016/07/28 16:02:11 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:02:11 client.go:31: receive :1000
+I: 2016/07/28 16:02:11 message.go:36: message id :1000
+I: 2016/07/28 16:02:11 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:02:11 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:02:11 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:02:11 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:02:11 message.go:23: message len :22
+I: 2016/07/28 16:02:11 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:02:11 client.go:31: receive :1000
+I: 2016/07/28 16:04:27 message.go:36: message id :1000
+I: 2016/07/28 16:04:27 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:04:27 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:04:27 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:04:27 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:04:27 message.go:23: message len :22
+I: 2016/07/28 16:04:27 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=)
+I: 2016/07/28 16:04:27 client.go:31: receive :1000
+I: 2016/07/28 16:04:27 message.go:36: message id :1000
+I: 2016/07/28 16:04:27 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:04:27 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:04:27 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:04:27 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:04:27 message.go:23: message len :22
+I: 2016/07/28 16:04:27 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:04:27 client.go:31: receive :1000
+I: 2016/07/28 16:04:27 message.go:36: message id :1000
+I: 2016/07/28 16:04:27 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:04:27 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:04:27 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:04:27 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:04:27 message.go:23: message len :22
+I: 2016/07/28 16:04:27 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:04:27 client.go:31: receive :1000
+I: 2016/07/28 16:04:27 message.go:36: message id :1000
+I: 2016/07/28 16:04:27 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:04:27 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:04:27 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:04:27 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:04:27 message.go:23: message len :22
+I: 2016/07/28 16:04:27 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:04:27 client.go:31: receive :1000
+I: 2016/07/28 16:04:27 message.go:36: message id :1000
+I: 2016/07/28 16:04:27 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:04:27 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:04:27 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:04:27 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:04:27 message.go:23: message len :22
+I: 2016/07/28 16:04:27 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:04:27 client.go:31: receive :1000
+I: 2016/07/28 16:04:27 message.go:36: message id :1000
+I: 2016/07/28 16:04:27 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:04:27 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:04:27 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:04:27 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:04:27 message.go:23: message len :22
+I: 2016/07/28 16:04:27 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:04:27 client.go:31: receive :1000
+I: 2016/07/28 16:04:27 message.go:36: message id :1000
+I: 2016/07/28 16:04:27 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:04:27 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:04:27 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:04:27 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:04:27 message.go:23: message len :22
+I: 2016/07/28 16:04:27 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:04:27 client.go:31: receive :1000
+I: 2016/07/28 16:04:27 message.go:36: message id :1000
+I: 2016/07/28 16:04:27 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:04:27 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:04:27 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:04:27 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:04:27 message.go:23: message len :22
+I: 2016/07/28 16:04:27 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:04:27 client.go:31: receive :1000
+I: 2016/07/28 16:04:27 message.go:36: message id :1000
+I: 2016/07/28 16:04:27 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:04:27 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:04:27 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:04:27 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:04:27 message.go:23: message len :22
+I: 2016/07/28 16:04:27 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:04:27 client.go:31: receive :1000
+I: 2016/07/28 16:04:27 message.go:36: message id :1000
+I: 2016/07/28 16:04:27 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:04:27 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:04:27 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:04:27 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:04:27 message.go:23: message len :22
+I: 2016/07/28 16:04:27 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" )
+I: 2016/07/28 16:04:27 client.go:31: receive :1000
+I: 2016/07/28 16:10:56 message.go:36: message id :0
+I: 2016/07/28 16:10:56 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:10:57 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 10 3 99 115 98]
+E: 2016/07/28 16:10:57 client.go:40: read tcp 127.0.0.1:51017->127.0.0.1:8080: wsarecv: An existing connection was forcibly closed by the remote host.
+I: 2016/07/28 16:17:09 message.go:36: message id :0
+I: 2016/07/28 16:17:09 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:17:09 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 10 3 99 115 98]
+E: 2016/07/28 16:17:09 client.go:40: read tcp 127.0.0.1:51099->127.0.0.1:8080: wsarecv: An existing connection was forcibly closed by the remote host.
+I: 2016/07/28 16:17:54 message.go:36: message id :0
+I: 2016/07/28 16:17:54 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:17:54 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 10 3 99 115 98]
+E: 2016/07/28 16:17:54 client.go:40: read tcp 127.0.0.1:51119->127.0.0.1:8080: wsarecv: An existing connection was forcibly closed by the remote host.
+I: 2016/07/28 16:41:56 message.go:36: message id :0
+I: 2016/07/28 16:41:56 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:41:56 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 10 3 99 115 98]
+E: 2016/07/28 16:41:56 client.go:40: read tcp 127.0.0.1:51368->127.0.0.1:8080: wsarecv: An existing connection was forcibly closed by the remote host.
+I: 2016/07/28 16:45:48 message.go:36: message id :1000
+I: 2016/07/28 16:45:48 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:45:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:45:48 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:45:48 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:45:48 message.go:23: message len :22
+I: 2016/07/28 16:45:48 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=, string=%v, []uint8=[10 4 49 48 48 48])
+I: 2016/07/28 16:45:48 client.go:31: receive :1000
+I: 2016/07/28 16:45:48 message.go:36: message id :1000
+I: 2016/07/28 16:45:48 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:45:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:45:48 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:45:48 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:45:48 message.go:23: message len :22
+I: 2016/07/28 16:45:48 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" , string=%v, []uint8=[10 4 49 48 48 48])
+I: 2016/07/28 16:45:48 client.go:31: receive :1000
+I: 2016/07/28 16:45:48 message.go:36: message id :1000
+I: 2016/07/28 16:45:48 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:45:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:45:48 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:45:48 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:45:48 message.go:23: message len :22
+I: 2016/07/28 16:45:48 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" , string=%v, []uint8=[10 4 49 48 48 48])
+I: 2016/07/28 16:45:48 client.go:31: receive :1000
+I: 2016/07/28 16:45:48 message.go:36: message id :1000
+I: 2016/07/28 16:45:48 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:45:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:45:48 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:45:48 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:45:48 message.go:23: message len :22
+I: 2016/07/28 16:45:48 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" , string=%v, []uint8=[10 4 49 48 48 48])
+I: 2016/07/28 16:45:48 client.go:31: receive :1000
+I: 2016/07/28 16:45:48 message.go:36: message id :1000
+I: 2016/07/28 16:45:48 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:45:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:45:48 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:45:48 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:45:48 message.go:23: message len :22
+I: 2016/07/28 16:45:48 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" , string=%v, []uint8=[10 4 49 48 48 48])
+I: 2016/07/28 16:45:48 client.go:31: receive :1000
+I: 2016/07/28 16:45:48 message.go:36: message id :1000
+I: 2016/07/28 16:45:48 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:45:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:45:48 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:45:48 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:45:48 message.go:23: message len :22
+I: 2016/07/28 16:45:48 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" , string=%v, []uint8=[10 4 49 48 48 48])
+I: 2016/07/28 16:45:48 client.go:31: receive :1000
+I: 2016/07/28 16:45:48 message.go:36: message id :1000
+I: 2016/07/28 16:45:48 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:45:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:45:48 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:45:48 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:45:48 message.go:23: message len :22
+I: 2016/07/28 16:45:48 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" , string=%v, []uint8=[10 4 49 48 48 48])
+I: 2016/07/28 16:45:48 client.go:31: receive :1000
+I: 2016/07/28 16:45:48 message.go:36: message id :1000
+I: 2016/07/28 16:45:48 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:45:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:45:48 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:45:48 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:45:48 message.go:23: message len :22
+I: 2016/07/28 16:45:48 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" , string=%v, []uint8=[10 4 49 48 48 48])
+I: 2016/07/28 16:45:48 client.go:31: receive :1000
+I: 2016/07/28 16:45:48 message.go:36: message id :1000
+I: 2016/07/28 16:45:48 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:45:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:45:48 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:45:48 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:45:48 message.go:23: message len :22
+I: 2016/07/28 16:45:48 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" , string=%v, []uint8=[10 4 49 48 48 48])
+I: 2016/07/28 16:45:48 client.go:31: receive :1000
+I: 2016/07/28 16:45:48 message.go:36: message id :1000
+I: 2016/07/28 16:45:48 message.go:46: [0 0 0 0 0 0 0 21],len 21
+I: 2016/07/28 16:45:48 client.go:22: data:[0 0 0 0 0 0 0 21 0 0 0 0 0 0 3 232 10 3 99 115 98]
+I: 2016/07/28 16:45:48 message.go:20: data:[0 0 0 0 0 0 0 22 0 0 0 0 0 0 3 233 10 4 49 48 48 48]
+I: 2016/07/28 16:45:48 message.go:21: data:[0 0 0 0 0 0 0 22]
+I: 2016/07/28 16:45:48 message.go:23: message len :22
+I: 2016/07/28 16:45:48 message.go:26: message type :1001%!(EXTRA string=%+v, *myproto.CreateRoomToc=roomID:"1000" , string=%v, []uint8=[10 4 49 48 48 48])
+I: 2016/07/28 16:45:48 client.go:31: receive :1000
