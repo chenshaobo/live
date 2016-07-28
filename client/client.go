@@ -1,8 +1,8 @@
 package main
 import (
 	"github.com/jbrodriguez/mlog"
-	"work/myproto"
-	"work/message"
+	"github.com/chenshaobo/live/myproto"
+	"github.com/chenshaobo/live/message"
 	"golang.org/x/net/websocket"
 	"os"
 )
