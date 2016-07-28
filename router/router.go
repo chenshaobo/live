@@ -3,6 +3,7 @@ package router
 import (
 	"github.com/golang/protobuf/proto"
 	"github.com/chenshaobo/live/message"
+	"github.com/kataras/iris"
 )
 
 
@@ -20,10 +21,10 @@ func(r *Router) Map(i uint64,f func(proto.Message) []byte){
 func(r *Router) GetRouteFun(i uint64) func(proto.Message) []byte{
 	return (*r.routeMap)[i]
 }
-func(r *Router) DoRoute(data *[]byte) []byte {
+func(r *Router) DoRoute(c iris.WebsocketConnection, data *[]byte) []byte {
 	messageType,protoMsg := message.Unmarshal(data)
 	routerFun := (*r.routeMap)[messageType]
-	return  routerFun(protoMsg)
+	return  routerFun(c,protoMsg)
 }
 
 
