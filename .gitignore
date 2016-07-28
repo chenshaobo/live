@@ -2,7 +2,7 @@
 *.o
 *.a
 *.so
-
+app.log
 # Folders
 _obj
 _test
@@ -22,3 +22,6 @@ _testmain.go
 *.exe
 *.test
 *.prof
+live.iml
+live.ipr
+live.iws
