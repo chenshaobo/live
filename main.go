@@ -4,10 +4,10 @@ package main
 import (
 	"github.com/kataras/iris"
 	"github.com/jbrodriguez/mlog"
-	"github.com/chenshaobo/live/router"
 	"github.com/golang/protobuf/proto"
-	"github.com/chenshaobo/live/myproto"
-	"github.com/chenshaobo/live/message"
+	"./router"
+	"./myproto"
+	"./message"
 )
 
 
