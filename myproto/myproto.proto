@@ -6,7 +6,7 @@ message CreateRoomTos{//<1000>
 }
 
 message CreateRoomToc{//<1001>
-	required string roomID = 1;
+	required int64 roomID = 1;
 }
 
 message JoinRoomTos {//<1002>

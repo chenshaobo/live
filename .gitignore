@@ -25,3 +25,4 @@ _testmain.go
 live.iml
 live.ipr
 live.iws
+.idea/*

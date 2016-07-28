@@ -28,6 +28,7 @@ func main() {
 		err = websocket.Message.Receive(ws,msg)
 		isErr(err)
 		_,dataProto := message.Unmarshal(msg)
+		mlog.Info("%+v",dataProto)
 		mlog.Info("receive :%v",dataProto.(*myproto.CreateRoomToc).GetRoomID())
 
 

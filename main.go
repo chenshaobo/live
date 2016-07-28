@@ -20,9 +20,9 @@ func main() {
 	r := router.New()
 	r.Map(1000,func(c iris.WebsocketConnection,p proto.Message) []byte{
 		createRoom := p.(*myproto.CreateRoomTos)
-		mlog.Info("create room :%s",createRoom.RoomName)
-		roomID := "1000"
-		roomManeger.CreateRoom(createRoom.RoomName,c)
+		mlog.Info("create room :%s",*createRoom.RoomName)
+		roomID := roomManeger.CreateRoom(*createRoom.RoomName,c)
+		mlog.Info("room id %d",roomID)
 		rData,_ := message.Marshal(&myproto.CreateRoomToc{RoomID:&roomID})
 		return rData
 	})
