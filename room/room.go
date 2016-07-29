@@ -6,42 +6,49 @@ import(
 )
 
 
-type room struct{
-	id int64
-	name string
-	member *[]iris.WebsocketConnection
-}
-
 type rooms struct {
 	curRoomID int64
-	rooms *map[string] *room
+	Rooms *map[string] *room
 }
 
 func (r *rooms) CreateRoom(name string,c iris.WebsocketConnection) int64{
 
-	if roomTmp,ok := (*r.rooms)[name] ; ok{
-		return roomTmp.id
+	if roomTmp,ok := (*r.Rooms)[name] ; ok{
+		return roomTmp.ID
 	}else{
 		mlog.Info("room not exit")
 		curRoomID := r.curRoomID
 		initMember := []iris.WebsocketConnection{c}
-		(*r.rooms)[name] = &room{id:curRoomID,name:name,member: &initMember}
+		(*r.Rooms)[name] = &room{ID:curRoomID,Name:name,member: &initMember}
 		r.curRoomID = r.curRoomID +1
 		return r.curRoomID
 	}
 }
 
 func (r *rooms) JoinRoom(name string,c iris.WebsocketConnection){
-	if roomTmp,ok := (*r.rooms)[name] ; ok{
-		(*roomTmp).member = append(*(*roomTmp).member,c)
+	if roomTmp,ok := (*r.Rooms)[name] ; ok{
+		roomTmp.AddMember(c)
 	}else{
 		mlog.Info("room not exit")
 	}
 }
 
 func NewRooms() *rooms{
-	return &rooms{curRoomID:0,rooms:&map[string] *room{}}
+	return &rooms{curRoomID:0,Rooms:&map[string] *room{}}
 }
 
 
+
+
+
+type room struct{
+	ID int64
+	Name string
+	member *[]iris.WebsocketConnection
+}
+
+
+func (r *room) AddMember(c iris.WebsocketConnection) {
+	*r.member = append(*r.member,c)
+}
 

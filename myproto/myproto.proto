@@ -1,6 +1,7 @@
 package myproto;
 
 
+
 message CreateRoomTos{//<1000>
 	 required string roomName = 1;
 }
@@ -30,4 +31,16 @@ message LiveTos{//<1006>
 }
 message LiveToc{//<1007>
 	required int64 errCode = 1;
+}
+
+message GetRoomsTos{//<1008>
+	required int64 id =1;
+}
+
+message room{
+	required int64 roomID = 1;
+	required string roomName = 2;
+}
+message GetRoomToc{//<1009>
+	repeated room room =1;
 }

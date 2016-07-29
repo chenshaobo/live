@@ -26,15 +26,25 @@ func main() {
 		rData,_ := message.Marshal(&myproto.CreateRoomToc{RoomID:&roomID})
 		return rData
 	})
+
+	r.Map(1008,func(c iris.WebsocketConnection,p proto.Message) []byte{
+		var rooms []*myproto.Room
+		for k,room := range *roomManeger.Rooms {
+			roomName := k
+			roomID := room.ID
+			rooms = append(rooms,&myproto.Room{RoomID:&roomID,RoomName:&roomName})
+		}
+		rData,_ := message.Marshal(&myproto.GetRoomToc{Room:rooms})
+		return rData
+	})
 	iris.Websocket.OnConnection(func(c iris.WebsocketConnection){
 		mlog.Info("Connect websocket")
 		c.OnMessage(func(message []byte){
 			mlog.Info("receive %v",message)
-			sendMsg := r.DoRoute(c,&message)
-
-			c.EmitMessage(sendMsg)
+			returnMsg := r.DoRoute(c,&message)
+			c.EmitMessage(returnMsg)
 		})
 	})
 
-	iris.Listen(":8080")
+	iris.Listen("0.0.0.0:8080")
 }
