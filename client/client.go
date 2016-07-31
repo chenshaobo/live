@@ -5,46 +5,50 @@ import (
 	"github.com/chenshaobo/live/myproto"
 	"github.com/chenshaobo/live/message"
 	"golang.org/x/net/websocket"
-	"os"
+	"github.com/golang/protobuf/proto"
 )
 
 func main() {
-	roomName := os.Args[1]
 	mlog.StartEx(mlog.LevelInfo, "app.log", 5 * 1024 * 1024, 5)
 	ws, err := websocket.Dial("ws://127.0.0.1:8080/ws", "", "http://127.0.0.1:8080")
 	if err != nil {
 		mlog.Error(err)
 		panic(err)
 	}
-	var msg = new([]byte)
+	test(1000,ws)
+	test(1008,ws)
+	for {
 
-	data, err := message.Marshal(&myproto.CreateRoomTos{RoomName:&roomName})
+	}
+}
+
+func test(msgType uint64,ws * websocket.Conn){
+	var msg = new([]byte)
+	switch msgType {
+	case 1000:
+		sendData(&myproto.CreateRoomTos{RoomName:"dddd"},ws)
+	case 1008:
+		sendData(&myproto.GetRoomsTos{Id:1000},ws)
+
+	}
+	err := websocket.Message.Receive(ws, msg)
+	isErr(err)
+	_, dataProto := message.Unmarshal(msg)
+	mlog.Info("%+v", dataProto)
+
+
+
+
+}
+
+func sendData(p proto.Message,ws *websocket.Conn){
+	data,err := message.Marshal(p)
 	mlog.Info("data:%v", data)
 	isErr(err)
 	ws.PayloadType = websocket.BinaryFrame
 	_, err1 := ws.Write(data)
 	isErr(err1)
-
-	err = websocket.Message.Receive(ws, msg)
-	isErr(err)
-	_, dataProto := message.Unmarshal(msg)
-	mlog.Info("%+v", dataProto)
-	mlog.Info("receive :%v", dataProto.(*myproto.CreateRoomToc).GetRoomID())
-
-	data,err = message.Marshal(&myproto.GetRoomsTos{})
-	mlog.Info("data:%v", data)
-	isErr(err)
-	ws.PayloadType = websocket.BinaryFrame
-	_, err1 = ws.Write(data)
-	isErr(err1)
-
-	err = websocket.Message.Receive(ws, msg)
-	isErr(err)
-	_, dataProto = message.Unmarshal(msg)
-	mlog.Info("%+v", dataProto)
-	mlog.Info("receive :%v", *dataProto.(*myproto.GetRoomToc).GetRoom()[0].RoomName)
 }
-
 func isErr(err error) {
 	if err != nil {
 		mlog.Error(err)

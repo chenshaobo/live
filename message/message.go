@@ -18,15 +18,13 @@ const (
 
 func  Unmarshal(data *[]byte) (uint64,proto.Message) {
 	mlog.Info("data:%v",*data)
-	mlog.Info("data:%v",(*data)[:MessageLenIndex])
 	messageLen := binary.BigEndian.Uint64((*data)[:MessageLenIndex])
 	mlog.Info("message len :%d",messageLen)
 	messageType := binary.BigEndian.Uint64((*data)[MessageLenIndex:MessageTypeIndex])
 	pb :=(*myproto.Id2Name)[messageType]
-	mlog.Info("message type :%d",messageType,"%+v",pb,"%v",(*data)[MessageTypeIndex:messageLen])
 	err := proto.Unmarshal((*data)[MessageTypeIndex:messageLen],pb)
 	if err != nil{
-		panic(err)
+		mlog.Error(err)
 	}
 	return messageType,pb
 }
