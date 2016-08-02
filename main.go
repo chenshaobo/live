@@ -21,16 +21,16 @@ func main() {
 	mlog.StartEx(mlog.LevelInfo, "app.log", 5*1024*1024, 5)
 	roomManeger := roomManager.NewRooms()
 	r := router.New()
-	r.Map(1000,func(c *websocket.Conn,p proto.Message) []byte{
+	r.Map(1000,func(m *roomManager.Member,p proto.Message) []byte{
 		createRoom := p.(*myproto.CreateRoomTos)
 		mlog.Info("create room :%s",createRoom.RoomName)
-		roomID := roomManeger.CreateRoom(createRoom.RoomName,c)
+		roomID := roomManeger.CreateRoom(createRoom.RoomName,m)
 		mlog.Info("room id %d",roomID)
 		rData,_ := message.Marshal(&myproto.CreateRoomToc{RoomID:roomID})
 		return rData
 	})
 
-	r.Map(1008,func(c *websocket.Conn,p proto.Message) []byte{
+	r.Map(1008,func(m *roomManager.Member,p proto.Message) []byte{
 		var curRooms  []*myproto.Room
 		mlog.Info("%v",*roomManeger.Rooms)
 		for k,room := range *roomManeger.Rooms {
@@ -44,11 +44,22 @@ func main() {
 		return rData
 	})
 
+	r.Map(1006,func(m *roomManager.Member,p proto.Message) []byte{
+		room := (*(*roomManeger).Roomers)[*m]
+		tocBin,_ := proto.Marshal(p)
+		for _,roomMember := range (*room.Members) {
+			(*roomMember).SendChan <-tocBin
+		}
+		rData,_ := message.Marshal(&myproto.LiveToc{})
+		return  rData
+	})
+
 	upgrader := websocket.Custom(func( c *websocket.Conn){
 		//mlog.Info("connect :%v",c)
 		sendChan := make(chan []byte)
-		go send(sendChan,c)
-		receive(sendChan,c,r)
+		m := roomManager.Member{SendChan:sendChan,Conn:c}
+		go send(&m)
+		receive(&m,r)
 	},100000,100000,true)
 	wsHandlerFunc := func (ctx  *iris.Context){
 		upgrader.Upgrade(ctx)
@@ -58,37 +69,37 @@ func main() {
 }
 
 
-func send(s chan []byte,c *websocket.Conn){
+func send(m *roomManager.Member){
 	ticker := time.NewTicker( 10 * time.Second)
 	defer func() {
 		ticker.Stop()
-		c.Close()
+		m.Conn.Close()
 	}()
 
 	for {
 		select {
-		case msg, ok := <-s:
+		case msg, ok := <-m.SendChan:
 			if !ok {
 				defer func() {
 					if err := recover(); err != nil {
 						ticker.Stop()
-						c.Close()
+						m.Conn.Close()
 					}
 				}()
-				c.WriteMessage(websocket.CloseMessage, []byte{})
+				m.Conn.WriteMessage(websocket.CloseMessage, []byte{})
 				return
 			}
 
-			c.SetWriteDeadline(time.Now().Add(60 * time.Second))
-			res, err := c.NextWriter(websocket.BinaryMessage)
+			m.Conn.SetWriteDeadline(time.Now().Add(60 * time.Second))
+			res, err := m.Conn.NextWriter(websocket.BinaryMessage)
 			if err != nil {
 				return
 			}
 			res.Write(msg)
 
-			n := len(s)
+			n := len(m.SendChan)
 			for i := 0; i < n; i++ {
-				res.Write(<-s)
+				res.Write(<-m.SendChan)
 			}
 
 			if err := res.Close(); err != nil {
@@ -96,7 +107,7 @@ func send(s chan []byte,c *websocket.Conn){
 			}
 
 		case <-ticker.C:
-			if err := c.WriteMessage(websocket.PingMessage, []byte{}); err != nil {
+			if err := m.Conn.WriteMessage(websocket.PingMessage, []byte{}); err != nil {
 				mlog.Error(err)
 				return
 			}
@@ -104,7 +115,9 @@ func send(s chan []byte,c *websocket.Conn){
 	}
 }
 
-func receive(s chan []byte,c *websocket.Conn,r *router.Router) {
+func receive(m *roomManager.Member,r *router.Router) {
+	c := m.Conn
+	s := m.SendChan
 	c.SetReadLimit(1024*1024)
 	c.SetReadDeadline(time.Now().Add(60 * time.Second))
 	c.SetPongHandler(func(s string) error {
@@ -121,7 +134,7 @@ func receive(s chan []byte,c *websocket.Conn,r *router.Router) {
 			}
 		} else {
 			mlog.Info("receive:%v",data)
-			sendData := r.DoRoute(c,&data)
+			sendData := r.DoRoute(m,&data)
 			s<- sendData
 		}
 

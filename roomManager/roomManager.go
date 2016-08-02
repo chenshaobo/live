@@ -5,50 +5,63 @@ import(
 	"github.com/jbrodriguez/mlog"
 )
 
+type Member struct{
+	SendChan chan[] byte
+	Conn *websocket.Conn
+}
+
 
 type RoomManager struct {
 	CurRoomID int64
-	Rooms *map[string] *room
+	Rooms *map[string] *Room
+	Roomers *map[Member] *Room
 }
 
-func (r *RoomManager) CreateRoom(name string,c *websocket.Conn) int64{
+func (r *RoomManager) CreateRoom(name string,m *Member) int64{
 
 	if roomTmp,ok := (*r.Rooms)[name] ; ok{
+		r.JoinRoom(name,m)
 		return roomTmp.ID
 	}else{
 		mlog.Info("room not exit")
 		curRoomID := r.CurRoomID
-		initMember := []*websocket.Conn{c}
-		(*r.Rooms)[name] = &room{ID:curRoomID,Name:name,member: &initMember}
+		initMember := []*Member{m}
+		room := Room{ID:curRoomID,Name:name,Members: &initMember}
+		mlog.Info("%v",m)
+		(*r.Rooms)[name] = &room
+		mlog.Info("%v, %v",m,*r.Roomers)
+		(*r.Roomers)[*m] = &room
 		r.CurRoomID = r.CurRoomID +1
 		return r.CurRoomID
 	}
 }
 
-func (r *RoomManager) JoinRoom(name string,c *websocket.Conn){
+func (r *RoomManager) JoinRoom(name string,m *Member){
 	if roomTmp,ok := (*r.Rooms)[name] ; ok{
-		roomTmp.AddMember(c)
+		roomTmp.AddMember(m)
 	}else{
 		mlog.Info("room not exit")
 	}
 }
 
 func NewRooms() *RoomManager{
-	return &RoomManager{CurRoomID:0,Rooms:&map[string] *room{}}
+	return &RoomManager{CurRoomID:0,Rooms:&map[string] *Room{},Roomers:&map[Member] *Room{}}
 }
 
 
 
 
 
-type room struct{
+type Room struct{
 	ID int64
 	Name string
-	member *[]*websocket.Conn
+	Members *[]*Member
 }
 
 
-func (r *room) AddMember(c *websocket.Conn) {
-	*r.member = append(*r.member,c)
+func (r *Room) AddMember(m *Member) {
+	*r.Members = append(*r.Members,m)
 }
+
+
 
