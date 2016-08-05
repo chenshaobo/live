@@ -18,9 +18,10 @@ import (
 
 
 func main() {
-	mlog.StartEx(mlog.LevelInfo, "app.log", 5*1024*1024, 5)
+	mlog.StartEx(mlog.LevelWarn, "app.log", 5*1024*1024, 5)
 	roomManeger := roomManager.NewRooms()
 	r := router.New()
+	members := []*roomManager.Member{}
 	r.Map(1000,func(m *roomManager.Member,p proto.Message) []byte{
 		createRoom := p.(*myproto.CreateRoomTos)
 		mlog.Info("create room :%s",createRoom.RoomName)
@@ -29,7 +30,12 @@ func main() {
 		rData,_ := message.Marshal(&myproto.CreateRoomToc{RoomID:roomID})
 		return rData
 	})
-
+	r.Map(1002,func(m *roomManager.Member,p proto.Message) []byte{
+		joinRoom := p.(*myproto.JoinRoomTos)
+//		roomManeger.JoinRoom(joinRoom.RoomID,m)
+		rData,_ := message.Marshal(&myproto.CreateRoomToc{RoomID:joinRoom.RoomID})
+		return rData
+	})
 	r.Map(1008,func(m *roomManager.Member,p proto.Message) []byte{
 		var curRooms  []*myproto.Room
 		mlog.Info("%v",*roomManeger.Rooms)
@@ -45,9 +51,9 @@ func main() {
 	})
 
 	r.Map(1006,func(m *roomManager.Member,p proto.Message) []byte{
-		room := (*(*roomManeger).Roomers)[*m]
-		tocBin,_ := proto.Marshal(p)
-		for _,roomMember := range (*room.Members) {
+
+		tocBin,_ := message.Marshal(p)
+		for _,roomMember := range members {
 			(*roomMember).SendChan <-tocBin
 		}
 		rData,_ := message.Marshal(&myproto.LiveToc{})
@@ -58,6 +64,7 @@ func main() {
 		//mlog.Info("connect :%v",c)
 		sendChan := make(chan []byte)
 		m := roomManager.Member{SendChan:sendChan,Conn:c}
+		members = append(members,&m)
 		go send(&m)
 		receive(&m,r)
 	},100000,100000,true)
