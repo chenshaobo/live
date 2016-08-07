@@ -16,12 +16,15 @@ import (
 )
 
 
-
+const (
+	FLVPacketTypeSeq = 0
+	FLVPacketTypeNlu = 1
+    FLVPacketTypeEos = 2
+)
 func main() {
 	mlog.StartEx(mlog.LevelWarn, "app.log", 5*1024*1024, 5)
 	roomManeger := roomManager.NewRooms()
 	r := router.New()
-	members := []*roomManager.Member{}
 	r.Map(1000,func(m *roomManager.Member,p proto.Message) []byte{
 		createRoom := p.(*myproto.CreateRoomTos)
 		mlog.Info("create room :%s",createRoom.RoomName)
@@ -32,16 +35,21 @@ func main() {
 	})
 	r.Map(1002,func(m *roomManager.Member,p proto.Message) []byte{
 		joinRoom := p.(*myproto.JoinRoomTos)
-//		roomManeger.JoinRoom(joinRoom.RoomID,m)
-		rData,_ := message.Marshal(&myproto.CreateRoomToc{RoomID:joinRoom.RoomID})
+		roomManeger.JoinRoom(joinRoom.RoomID,m)
+
+		if data := (*roomManeger.Rooms)[m.RoomID].FlvFirstPacket;data !=nil {
+			m.SendChan <- *data
+			mlog.Warning("data %v", *data)
+		}
+		rData,_ := message.Marshal(&myproto.JoinRoomToc{ErrCode:joinRoom.RoomID})
 		return rData
 	})
 	r.Map(1008,func(m *roomManager.Member,p proto.Message) []byte{
 		var curRooms  []*myproto.Room
 		mlog.Info("%v",*roomManeger.Rooms)
 		for k,room := range *roomManeger.Rooms {
-			roomName := k
-			roomID := room.ID
+			roomID := k
+			roomName := room.Name
 			roomTmp := &myproto.Room{RoomID:roomID,RoomName:roomName}
 			curRooms = append(curRooms,roomTmp)
 		}
@@ -50,23 +58,34 @@ func main() {
 		return rData
 	})
 
-	r.Map(1006,func(m *roomManager.Member,p proto.Message) []byte{
-
-		tocBin,_ := message.Marshal(p)
-		for _,roomMember := range members {
-			(*roomMember).SendChan <-tocBin
+	r.LiveF= func(m *roomManager.Member,data *[]byte) []byte{
+		members := (*roomManeger.Rooms)[m.RoomID].Members
+		for _,roomMember := range *members {
+			if roomMember != m {
+				(*roomMember).SendChan <- *data
+			}
 		}
-		rData,_ := message.Marshal(&myproto.LiveToc{})
-		return  rData
-	})
+		
+		// [Uint64-Len,Uint64-ProtoType,Uint8-streamType,Uint8-FlvHeader,Uint8-FlvPacketType,...]
+		if (*data)[18] == FLVPacketTypeSeq {
+			(*roomManeger.Rooms)[m.RoomID].FlvFirstPacket = data
+		}
+		return  []byte{}
+	}
 
 	upgrader := websocket.Custom(func( c *websocket.Conn){
 		//mlog.Info("connect :%v",c)
 		sendChan := make(chan []byte)
 		m := roomManager.Member{SendChan:sendChan,Conn:c}
-		members = append(members,&m)
 		go send(&m)
-		receive(&m,r)
+		if receive(&m,r){
+			if room,ok := (*roomManeger.Rooms)[m.RoomID];ok{
+				room.DelMember(&m)
+				if len(*((*room).Members)) == 0 {
+					roomManeger.DeleRoom(m.RoomID)
+				}
+			}
+		}
 	},100000,100000,true)
 	wsHandlerFunc := func (ctx  *iris.Context){
 		upgrader.Upgrade(ctx)
@@ -115,16 +134,19 @@ func send(m *roomManager.Member){
 
 		case <-ticker.C:
 			if err := m.Conn.WriteMessage(websocket.PingMessage, []byte{}); err != nil {
-				mlog.Error(err)
 				return
 			}
 		}
 	}
 }
 
-func receive(m *roomManager.Member,r *router.Router) {
+func receive(m *roomManager.Member,r *router.Router) bool {
 	c := m.Conn
 	s := m.SendChan
+	defer func() {
+		c.Close()
+		close(m.SendChan)
+	}()
 	c.SetReadLimit(1024*1024)
 	c.SetReadDeadline(time.Now().Add(60 * time.Second))
 	c.SetPongHandler(func(s string) error {
@@ -136,14 +158,16 @@ func receive(m *roomManager.Member,r *router.Router) {
 		if _, data, err := c.ReadMessage(); err != nil {
 			if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway) {
 				mlog.Error(err)
-				c.Close()
 				break
 			}
 		} else {
 			mlog.Info("receive:%v",data)
-			sendData := r.DoRoute(m,&data)
-			s<- sendData
+			if needReply,sendData := r.DoRoute(m,&data);needReply{
+				s <-sendData
+			}
 		}
 
 	}
+
+	return true
 }

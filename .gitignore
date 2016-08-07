@@ -6,7 +6,7 @@ app.log
 # Folders
 _obj
 _test
-
+live
 # Architecture specific extensions/prefixes
 *.[568vq]
 [568vq].out
