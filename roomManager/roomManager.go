@@ -14,10 +14,10 @@ type Member struct{
 
 type RoomManager struct {
 	CurRoomID int64
-	Rooms *map[int64] *Room
+	Rooms map[int64] *Room
 }
 func (r *RoomManager) isRoomNameExit(name string) (int64,bool) {
-	for _,room  := range *r.Rooms{
+	for _,room  := range r.Rooms{
 		if room.Name == name {
 			return room.ID,true
 		}
@@ -34,18 +34,18 @@ func (r *RoomManager) CreateRoom(name string,m *Member) int64{
 		curRoomID := r.CurRoomID
 		m.RoomID = curRoomID
 		members := []*Member{m}
-		room := Room{ID:curRoomID,Name:name,Members: &members,Owner:m,FlvFirstPacket:nil}
-		(*r.Rooms)[curRoomID] = &room
+		room := Room{ID:curRoomID,Name:name,Members: members,Owner:m,FlvFirstPacket:nil}
+		(r.Rooms)[curRoomID] = &room
 		r.CurRoomID = r.CurRoomID +1
 		return r.CurRoomID
 	}
 }
 func (r *RoomManager) DeleRoom( roomID int64){
-	delete(*r.Rooms,roomID)
+	delete(r.Rooms,roomID)
 }
 
 func (r *RoomManager) JoinRoom(roomID int64,m *Member){
-	if roomTmp,ok := (*r.Rooms)[roomID] ; ok{
+	if roomTmp,ok := (r.Rooms)[roomID] ; ok{
 		m.RoomID = roomID
 		roomTmp.AddMember(m)
 	}else{
@@ -54,12 +54,12 @@ func (r *RoomManager) JoinRoom(roomID int64,m *Member){
 }
 
 func (r *RoomManager) MemberExit(roomID int64,m *Member){
-	if room,ok := (*r.Rooms)[roomID];ok{
+	if room,ok := (r.Rooms)[roomID];ok{
 		room.DelMember(m)
 	}
 }
 func NewRooms() *RoomManager{
-	return &RoomManager{CurRoomID:0,Rooms:&map[int64]*Room{}}
+	return &RoomManager{CurRoomID:0,Rooms:map[int64]*Room{}}
 }
 
 
@@ -70,24 +70,24 @@ type Room struct{
 	ID int64
 	Name string
 	Owner *Member
-	Members *[]*Member
+	Members []*Member
 	FlvFirstPacket  *[]byte
 }
 
 
 func (r *Room) AddMember(m *Member) {
-	*r.Members = append(*r.Members,m)
+	r.Members = append(r.Members,m)
 }
 
 
 func(r *Room) DelMember(m *Member){
 	members := (*r).Members
-	for i,member := range *members{
+	for i,member := range members{
 		if member != m{
 			continue
 		}
-		newMembers := append((*members)[:i],(*members)[i+1:]...)
-		(*r).Members =  &newMembers
+		newMembers := append(members[:i],members[i+1:]...)
+		(*r).Members =  newMembers
 	}
 }
 

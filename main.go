@@ -22,7 +22,7 @@ const (
     FLVPacketTypeEos = 2
 )
 func main() {
-	mlog.StartEx(mlog.LevelWarn, "app.log", 5*1024*1024, 5)
+	mlog.StartEx(mlog.LevelInfo, "app.log", 5*1024*1024, 5)
 	roomManeger := roomManager.NewRooms()
 	r := router.New()
 	r.Map(1000,func(m *roomManager.Member,p proto.Message) []byte{
@@ -37,7 +37,7 @@ func main() {
 		joinRoom := p.(*myproto.JoinRoomTos)
 		roomManeger.JoinRoom(joinRoom.RoomID,m)
 
-		if data := (*roomManeger.Rooms)[m.RoomID].FlvFirstPacket;data !=nil {
+		if data := (roomManeger.Rooms)[m.RoomID].FlvFirstPacket;data !=nil {
 			m.SendChan <- *data
 			mlog.Warning("data %v", *data)
 		}
@@ -46,8 +46,8 @@ func main() {
 	})
 	r.Map(1008,func(m *roomManager.Member,p proto.Message) []byte{
 		var curRooms  []*myproto.Room
-		mlog.Info("%v",*roomManeger.Rooms)
-		for k,room := range *roomManeger.Rooms {
+		mlog.Info("%v",roomManeger.Rooms)
+		for k,room := range roomManeger.Rooms {
 			roomID := k
 			roomName := room.Name
 			roomTmp := &myproto.Room{RoomID:roomID,RoomName:roomName}
@@ -59,8 +59,8 @@ func main() {
 	})
 
 	r.LiveF= func(m *roomManager.Member,data *[]byte) []byte{
-		members := (*roomManeger.Rooms)[m.RoomID].Members
-		for _,roomMember := range *members {
+		members := (roomManeger.Rooms)[m.RoomID].Members
+		for _,roomMember := range members {
 			if roomMember != m {
 				(*roomMember).SendChan <- *data
 			}
@@ -68,7 +68,7 @@ func main() {
 		
 		// [Uint64-Len,Uint64-ProtoType,Uint8-streamType,Uint8-FlvHeader,Uint8-FlvPacketType,...]
 		if (*data)[18] == FLVPacketTypeSeq {
-			(*roomManeger.Rooms)[m.RoomID].FlvFirstPacket = data
+			(roomManeger.Rooms)[m.RoomID].FlvFirstPacket = data
 		}
 		return  []byte{}
 	}
@@ -79,9 +79,9 @@ func main() {
 		m := roomManager.Member{SendChan:sendChan,Conn:c}
 		go send(&m)
 		if receive(&m,r){
-			if room,ok := (*roomManeger.Rooms)[m.RoomID];ok{
+			if room,ok := (roomManeger.Rooms)[m.RoomID];ok{
 				room.DelMember(&m)
-				if len(*((*room).Members)) == 0 {
+				if len((room).Members) == 0 {
 					roomManeger.DeleRoom(m.RoomID)
 				}
 			}
@@ -133,6 +133,7 @@ func send(m *roomManager.Member){
 			}
 
 		case <-ticker.C:
+			mlog.Info("ping")
 			if err := m.Conn.WriteMessage(websocket.PingMessage, []byte{}); err != nil {
 				return
 			}
@@ -150,6 +151,7 @@ func receive(m *roomManager.Member,r *router.Router) bool {
 	c.SetReadLimit(1024*1024)
 	c.SetReadDeadline(time.Now().Add(60 * time.Second))
 	c.SetPongHandler(func(s string) error {
+		print("receive pong")
 		c.SetReadDeadline(time.Now().Add(60 * time.Second))
 		return nil
 	})

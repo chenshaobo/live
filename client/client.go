@@ -28,7 +28,7 @@ func test(msgType uint64,ws * websocket.Conn){
 	case 1000:
 		sendData(&myproto.CreateRoomTos{RoomName:"dddd"},ws)
 	case 1008:
-		sendData(&myproto.GetRoomsTos{Id:1000},ws)
+		sendData(&myproto.GetRoomsTos{ID:1000},ws)
 
 	}
 	err := websocket.Message.Receive(ws, msg)
